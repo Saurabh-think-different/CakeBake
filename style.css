@@ -1,0 +1,138 @@
+/*
+
+Colors : F6BD60 SKIN
+         F7EDE2 PALE PINK
+         F5CAC3 LIGHT PINK
+         84A59D TURQUOISE
+         F28482 LIP PINK
+
+
+*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+}
+
+.main-nav{
+    height: 8vh;
+    background-color: #F28482;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#logo{
+    font-size: 24px;
+    cursor: pointer;
+    text-shadow: 0px 0px 3px whitesmoke;
+    color: rgb(250, 210, 210);
+}
+#logo i{
+    padding: 10px;
+    font-size: 32px;
+    background: -webkit-linear-gradient(rgb(255, 208, 0), rgb(236, 34, 84));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#logo span{
+    color: #9a031e;
+    font-weight: 700;
+    font-size: 26px;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    height: 8vh;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.nav-links li{
+    list-style-type: none;
+    transition: all 150ms ease-in-out;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #293241;
+    font-weight: 500;
+}
+.nav-links li:hover{
+    transform: scale(1.1); 
+}
+.nav-links a:hover{
+    color: white;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+    outline: none;
+}
+.hamburger div{
+    background-color: rgb(226, 226, 226);
+    width: 25px;
+    height: 3px;
+    margin: 3px;
+}
+
+
+/*--------------------- Media Queries----------------*/
+
+@media screen and (max-width: 600px) {
+     body{
+        overflow-x: hidden;
+    }
+    
+    .hamburger{
+        display: block;
+        position: absolute;
+        left: 20px;
+    }
+    .nav-links{
+        position: absolute;
+        left: 0;
+        top: 8vh;
+        height: 92vh;
+        justify-content: start;
+        padding: 30px 0;
+        background-color: #F5CAC3;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: 500ms ease-out;
+    }
+    .nav-links li{
+        margin: 7px 0;
+        opacity: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .nav-active{
+        transform: translateX(0%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-links{
+        width: 50%;
+    }
+}
+
+
+@keyframes navLinkFade{
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
